@@ -98,7 +98,7 @@ class TranscriptDocument(BaseDocument):
         # Transcribe the audio
         self.processor.process()
         # Get the text
-        text, chunk_text = self.processor.get_text() 
+        text, chunk_text = self.processor.get_text()
         self.text = text
         self.chunk_text = chunk_text
         # Set the documents

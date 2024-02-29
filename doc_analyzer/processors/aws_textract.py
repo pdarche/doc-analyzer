@@ -58,8 +58,8 @@ class AWSTextractProcessor(BaseProcessor):
                     df = pd.DataFrame(data[1:], columns=data[0])
                     table_text = "\n".join([df.to_csv(index=False)])
                     subdoc_tables.append(table_text)
-                    #with open(f"./{self.datadir}/tables/subdoc_{subdoc_num}_table_{table_num}.txt", 'w') as file:
-                    #    file.write(table_text)
+                    with open(f"./{self.datadir}/tables/subdoc_{subdoc_num}_table_{table_num}.txt", 'w') as file:
+                        file.write(table_text)
                 except:
                     print(f"Error extracting block: {table_block.get('Id')}")
         table_text = "\n".join(subdoc_tables)   
